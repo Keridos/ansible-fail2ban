@@ -131,6 +131,7 @@
          (item.delete is undefined or not item.delete))
 
 - name: Assemble /etc/fail2ban/jail.local
+  when: ansible_facts[ansible_distribution_release] != "20.04"
   assemble:
     src: '/etc/fail2ban/jail.local.d'
     dest: '/etc/fail2ban/jail.local'
